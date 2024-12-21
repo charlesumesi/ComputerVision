@@ -1,0 +1,19 @@
+{% extends "kusaassite/base.html" %}
+
+{% block title %}Mini – Homepage{% endblock %}
+
+{% load static %}
+
+
+{% block main %}
+
+<div id="fr-webcam-stream">
+    <img src="{% url 'webcamfeed' %}"/>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+{% endblock %}

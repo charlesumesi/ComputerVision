@@ -12,7 +12,7 @@ import requests
 
 
 def index(request):
-    """View for home.html"""
+    """View for index.html"""
     return render(request, 'xxx/index.html')
 
 
@@ -23,17 +23,12 @@ def webgen(cam):
                b'Content-Type: frame/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 def webcamfeed(request):
-        return StreamingHttpResponse(webgen(Webcam()), 
-                                     content_type ='multipart/x-mixed-replace; boundary=frame')
+    return StreamingHttpResponse(webgen(Webcam()), 
+                                 content_type ='multipart/x-mixed-replace; boundary=frame')
     
 def ipwebcamfeed(request):
-    if request.COOKIES["url_cookie_"]:
-        received_cookie = request.COOKIES["url_cookie_"]
-        processed_cookie = received_cookie.split('start_')
-        for key in dict_ipwebcamfeed.keys():
-            if key == processed_cookie[1]:
-                return StreamingHttpResponse(webgen(IPWebcam()), 
-                                             content_type ='multipart/x-mixed-replace; boundary=frame')
+    return StreamingHttpResponse(webgen(IPWebcam()), 
+                                 content_type ='multipart/x-mixed-replace; boundary=frame')
 
 
 

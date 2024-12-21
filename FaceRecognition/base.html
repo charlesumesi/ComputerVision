@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Charles Umesi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta meta http-equiv="text/css; charset=utf-8">
+    <meta meta http-equiv="application/javascript; charset=utf-8">
+    <meta charset="utf-8">
+    <title>{% block title %}Mini – Homepage{% endblock %}</title>
+  </head>
+
+  <body>
+
+    <div id="core-container" class="container">
+        {% block main %}{% endblock %}
+    </div>
+
+  </body>
+</html>
