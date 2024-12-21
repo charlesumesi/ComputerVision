@@ -1,10 +1,8 @@
 from django.shortcuts import render
-from .models import *
 from django.http.response import StreamingHttpResponse
 
 from .camera import *
 
-import requests
 
 """For implementation in a Django project"""
 
